@@ -124,6 +124,21 @@ app.controller('myCtrl',function($scope){
 		return price;
 	}
 	
+	$scope.batchprice = function(type,rang){
+		var flag = 1;
+		rang = rang || 5;
+		rang = Math.abs(rang);
+		
+		if(type != 'plus'){ // 批量减
+			flag = -1;
+		}
+		
+		for(var n = 0; n < $scope.wooddata.length;n++){
+			$scope.wooddata[n].price += rang*flag;
+		}
+		
+	}
+	
 	$scope.totalnumber = 0;
 	$scope.totalcube = 0;
 	$scope.totalprice = 0;

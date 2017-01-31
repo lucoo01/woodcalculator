@@ -28,7 +28,12 @@
 				<li class="mui-table-view-cell">
 					<span class="mui-badge size-tip">尺寸</span>
 					<span class="mui-badge number-tip">数量</span>
-					<span class="mui-badge price-tip">价格</span>
+					<div class="mui-numbox price-box">
+					<button class="mui-btn mui-numbox-btn-minus" type="button" ng-click="batchprice('minus',5)">-</button>
+					<span class="price-tip">价格</span>
+					<input class="mui-numbox-input" type="number" ng-hide="true" />
+					<button class="mui-btn mui-numbox-btn-plus" type="button" ng-click="batchprice('plus',5)">+</button>
+					</div>
 				</li>
 
 				<li class="mui-table-view-cell" ng-repeat="wood in wooddata">

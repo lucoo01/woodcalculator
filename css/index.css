@@ -5,8 +5,11 @@
 	float:left;
 }
 .price-tip {
-	font-size:1.5rem;
-	margin-right: 1.8rem;
+	line-height: 2rem;
+}
+.price-box {
+	float:right;
+	margin-left: 3rem;
 }
 .number-tip {
 	font-size:1.5rem;
