@@ -1,0 +1,25 @@
+@charset "utf-8";
+.woodsize {
+	font-size: 2rem;
+	padding-top:1rem;
+}
+.price-tip {
+	font-size:1.5rem;
+	margin-right: 1.8rem;
+}
+.number-tip {
+	font-size:1.5rem;
+	margin-right:11rem;
+}
+
+.size-tip {
+	font-size:1.5rem;
+	margin-right:16rem;
+}
+.total-tip {
+	font-size:1.8em;
+	color:#000;
+}
+red {
+	color:#ff0000;
+}

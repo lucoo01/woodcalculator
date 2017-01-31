@@ -1,0 +1,14 @@
+{
+	"index.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"fonts/mui.ttf",
+			"css/index.css",
+			"js/jquery-1.11.2.min.js",
+			"js/index.js",
+			"js/angular.min.js"
+		],
+		"refer": []
+	}
+}

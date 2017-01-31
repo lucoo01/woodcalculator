@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>木材计算</title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link href="css/index.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+    <!-- angular -->
+    <script type="text/javascript" src="js/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+	
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">木材计算器</h1>
+	</header>
+	<div class="mui-content">
+	    
+	    
+	    <div class="mui-card">
+		<div class="mui-card-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<span class="mui-badge size-tip">尺寸</span>
+					<span class="mui-badge number-tip">数量</span>
+					<span class="mui-badge price-tip">价格</span>
+				</li>
+
+				<li class="mui-table-view-cell" ng-repeat="wood in wooddata">
+					
+					<span class="woodsize" >{{wood.size}}</span>
+					<div class="mui-numbox " >
+					  <!-- "-"按钮，点击可减小当前数值 -->
+					  <button class="mui-btn mui-numbox-btn-minus" type="button" ng-click="wood.number = numberminus(wood.number)">-</button>
+					  <input class="mui-numbox-input" type="number" ng-model="wood.number" />
+					  <!-- "+"按钮，点击可增大当前数值 -->
+					  <button class="mui-btn mui-numbox-btn-plus" type="button" ng-click="wood.number = numberplus(wood.number)">+</button>
+					</div>
+					
+					<div class="mui-numbox mui-badge " data-numbox-step='5' >
+					  <button class="mui-btn mui-numbox-btn-minus" type="button" ng-click="wood.price = priceminus(wood.price)">-</button>
+					  <input class="mui-numbox-input" type="number" ng-model="wood.price"/>
+					  <button class="mui-btn mui-numbox-btn-plus" type="button" ng-click="wood.price = priceplus(wood.price)">+</button>
+					</div>
+					<span class="mui-badge mui-badge-primary" ng-hide="true">{{ wood.count = wood.number*wood.constant*wood.price }}</span>
+				</li>
+				
+				
+			</ul>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="mui-card">
+		<!--页眉，放置标题-->
+		<div class="mui-card-header">运算结果 <button type="button" class="mui-btn mui-btn-blue mui-badge" ng-click="initwooddata()">清除</button></div>
+		<!--内容区-->
+		<div class="mui-card-content" >
+			
+			<p class="total-tip">总价:<red>{{ totalprice | number:2 }}</red> 元</p>
+			<p class="total-tip">总立方:{{ totalcube | number:2 }}</p>
+			<p class="total-tip">木材总数:{{ totalnumber }} 根</p>
+			<p >公式:
+				<ul>
+				<li ng-repeat="item in formulary">{{item}}</li>
+				</ul>
+			</p>
+		</div>
+		<!--页脚，放置补充信息或支持的操作-->
+		<div class="mui-card-footer">日期:<span data-ng-bind="datetime"></span></div>
+	</div>
+	
+	
+	</div>
+	
+	<!-- jquery -->
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    
+    <!-- index -->
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
