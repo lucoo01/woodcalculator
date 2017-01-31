@@ -34,12 +34,8 @@
 				<li class="mui-table-view-cell" ng-repeat="wood in wooddata">
 					
 					<span class="woodsize" >{{wood.size}}</span>
-					<div class="mui-numbox " >
-					  <!-- "-"按钮，点击可减小当前数值 -->
-					  <button class="mui-btn mui-numbox-btn-minus" type="button" ng-click="wood.number = numberminus(wood.number)">-</button>
-					  <input class="mui-numbox-input" type="number" ng-model="wood.number" />
-					  <!-- "+"按钮，点击可增大当前数值 -->
-					  <button class="mui-btn mui-numbox-btn-plus" type="button" ng-click="wood.number = numberplus(wood.number)">+</button>
+					<div class="wc-numbox" >
+					  <input class="mui-numbox-input" type="number" ng-model="wood.number" ng-focus="wood.number = focusnumber(wood.number)" ng-blur="wood.number = blurnumber(wood.number)" />			  
 					</div>
 					
 					<div class="mui-numbox mui-badge " data-numbox-step='5' >

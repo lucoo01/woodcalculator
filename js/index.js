@@ -64,32 +64,33 @@ app.controller('myCtrl',function($scope){
 		angular.copy(initdata,$scope.wooddata);
 	};
 	
-	$scope.numberminus = function(number){
+	$scope.focusnumber = function(number){
 		
 		if(typeof number == 'undefined'){
 			return 0;
 		}
-		number = -(-number); // 转换成数值
 		
-		number = number -1;
-		if(number < 0){
-			return 0;
+		number = -(-number); // 转换成数值
+
+		if(number === 0){
+			return '';
 		}
 		
 		return number;
 	}
 	
-	$scope.numberplus = function(number){
+	$scope.blurnumber = function(number){
 		
 		if(typeof number == 'undefined'){
 			return 0;
 		}
+		
 		number = -(-number); // 转换成数值
 		
-		number = number + 1;
 		if(number < 0){
-			return 0;
+			return Math.abs(number);
 		}
+		
 		return number;
 	}
 	

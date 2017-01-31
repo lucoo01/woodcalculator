@@ -2,6 +2,7 @@
 .woodsize {
 	font-size: 2rem;
 	padding-top:1rem;
+	float:left;
 }
 .price-tip {
 	font-size:1.5rem;
@@ -22,4 +23,9 @@
 }
 red {
 	color:#ff0000;
+}
+.wc-numbox {
+	width:6rem;
+	height:1rem;
+	float:left;
 }
